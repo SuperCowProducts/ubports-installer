@@ -22,7 +22,7 @@ If the installer runs into an error, it will usually present you with the option
 
 ## Set up for development
 
-Ensure you have properly installed [`nodejs` and `npm`](https://nodejs.org/en/download/package-manager/).
+Ensure you have properly installed [`nodejs` and `npm`](https://nodejs.org/en/download/package-manager/): currently `npm` version 18 is supported.
 
 ```
 git clone https://github.com/ubports/ubports-installer.git
