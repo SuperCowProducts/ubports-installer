@@ -12,6 +12,16 @@ Fear not! Installing [UBports](https://ubports.com) [Ubuntu Touch](https://ubunt
 
 Troubleshooting information can be found [in the docs](https://docs.ubports.com/en/latest/userguide/install.html). If you need help, you can join UBports' support channels on [telegram](https://t.me/WelcomePlus) or [matrix](https://matrix.to/#/!KwdniMNeTmClpgHkND:matrix.org?via=matrix.org&via=ubports.chat&via=disroot.org) or ask a question [in the forum](https://forums.ubports.com/) or on [askubuntu](https://askubuntu.com). If you believe that the UBports Installer is not working correctly, you can also [file a new issue](https://github.com/ubports/ubports-installer/issues/new) to help us solve the problem. Use the _Report a bug_ button directly in the installer to generate a template for a bugreport with all the important metadata automatically filled out.
 
+### Issues with arm64 processors
+
+If you're device uses this kind of hardware, when running after compiling from source you may have issues with the binaries inside the `./node_modules/android-tools-bin/dist/linux/arm/` directory: an easy fix is to install `adb`, `heimdall` and `fastboot` from your package manager and then:
+
+```
+ln -s /usr/bin/adb ./node_modules/android-tools-bin/dist/linux/arm/adb
+ln -s /usr/bin/fastboot ./node_modules/android-tools-bin/dist/linux/arm/fastboot
+ln -s /usr/bin/heimdall ./node_modules/android-tools-bin/dist/linux/arm/heimdall
+```
+
 ## Config files
 
 By default, the Installer will always use the latest version of the [installation configuration files](https://github.com/ubports/installer-configs) available. Should you want to specify a custom config file, you can do that by starting the Installer with the `-f ./path/to/config.yml` argument. This can be used to test changes to the configuration or even to add new devices to the installer. The [structure of the config files is specified here](https://github.com/ubports/installer-configs#readme).
