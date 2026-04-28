@@ -33,6 +33,9 @@ npm install
 
 ### Run with npm
 
+**Note about running on Arm**: you may have [issues with the node module binaries of `fastboot`, `adb` and `heimdall`](https://github.com/ubports/ubports-installer/pull/4422#discussion_r2804110142): in that case, install the system packages for them (e.g. `dnf install fastboot adb heimdall`), then start the app with `USE_NATIVE_SYSTEM_TOOLS=1 npm start`.
+
+
 ```
 $ npm start -- -h
 Usage: npm start -- [-f <file>] [-v[v] [-d]
